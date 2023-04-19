@@ -1,0 +1,10 @@
+{
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "typescript"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/a56b219a-1b26-4cdc-9025-1eaf0d28b8ba/resourceGroups/eVC-SmartEdit/providers/Microsoft.Web/sites/xPressApp-eVC",
+    "appService.deploySubpath": "."
+  }
+  
