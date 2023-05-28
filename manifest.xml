@@ -30,7 +30,10 @@
           </GetStarted>
           <FunctionFile resid="Commands.Url"/>
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
-            <OfficeTab id="TabHome">
+            <!--OfficeTab id="TabHome">
+            </OfficeTab-->
+						<CustomTab id="eVCtab" label="eVC Tools">
+							<!-- Ribbon commands will be added here -->
               <Group id="CommandsGroup">
                 <Label resid="CommandsGroup.Label"/>
                 <Icon>
@@ -55,7 +58,7 @@
                   </Action>
                 </Control>
               </Group>
-            </OfficeTab>
+						</CustomTab>
           </ExtensionPoint>
         </DesktopFormFactor>
       </Host>

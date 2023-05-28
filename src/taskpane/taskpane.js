@@ -11,6 +11,7 @@ Office.onReady((info) => {
     document.getElementById("sideload-msg").style.display = "none";
     document.getElementById("app-body").style.display = "flex";
     document.getElementById("checkPairedSymbols").onclick = checkPairedSymbols;
+    document.getElementById("indexValidation").onclick = indexValidation;
   }
 });
 
@@ -48,4 +49,45 @@ async function checkPairedSymbols() {
       console.log("Debug info: " + JSON.stringify(error.debugInfo));
     }
   });
+  console.log("checkPairedSymbols Completed");
+}
+
+async function indexValidation() {
+  console.log("passToServer Started");
+  await Word.run(function (context) {
+    // Get the body content
+    var body = context.document.body;
+
+    // Queue a command to load the body content
+    context.load(body, "text");
+
+    // Run the queued commands
+    return context.sync().then(function () {
+        // Get the text of the body content
+        var bodyText = body.text;
+				console.log(bodyText);
+
+        // Send the bodyText to the server for processing
+        return fetch("http://localhost:4000/process-body", {
+          method: "POST",
+          body: bodyText,
+          headers: {
+            "Content-Type": "text/plain",
+          },
+        });
+    }).then(function (response) {
+        // Get the response text as plain text
+//        console.log(response.text());
+        return response.text();
+    }).then(function (processedText) {
+        // Queue a command to set the body content with the processed text
+        body.clear();
+        body.insertText(processedText, Word.InsertLocation.replace);
+        console.log(processedText);
+
+        // Run the queued commands
+        return context.sync();
+      });
+  });
+  console.log("passToServer Completed");
 }
