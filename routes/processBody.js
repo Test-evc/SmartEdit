@@ -18,7 +18,7 @@ router.post('/', function(req, res, next) {
 //	router.post('/', function(req, res, next) {
 		const bodyContent = req.body;
 //		res.send("Hi B" + bodyContent);
-		const pythonProcess = spawn('python', ['script.py', bodyContent]);
+		const pythonProcess = spawn('python', ['Index-Validation.py', bodyContent]);
 
 		let output = '';
 		pythonProcess.stdout.on('data', (data) => {

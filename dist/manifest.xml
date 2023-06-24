@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
+  <Id>9edb6b9c-5313-4a93-9f89-d7dd9baed677</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>eVC-Tech</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="SmartEdit"/>
+  <Description DefaultValue="A gateway to smart editing and validation tools by eVC."/>
+  <IconUrl DefaultValue="https://app.smartedit-evc.us/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://app.smartedit-evc.us/assets/icon-64.png"/>
+  <SupportUrl DefaultValue="https://SmartEdit.eVC-Tech.com"/>
+  <AppDomains>
+    <AppDomain>https://www.eVC-Tech.com</AppDomain>
+    <AppDomain>https://localhost:3000</AppDomain>
+		<AppDomain>https://app.smartedit-evc.us</AppDomain>
+		<AppDomain>http://localhost:4000</AppDomain>
+		<AppDomain>https://server.smartedit-evc.us</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Document"/>
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://localhost:3000"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Document">
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="GetStarted.Title"/>
+            <Description resid="GetStarted.Description"/>
+            <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
+          </GetStarted>
+          <FunctionFile resid="Commands.Url"/>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <CustomTab id="TabHomeeVC">
+              <Label resid="myTab.Label"/>
+              <Group id="TPGroup1">
+                <Label resid="TPGroup1.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Control xsi:type="Button" id="TPGroup1Btn1">
+                  <Label resid="TPGroup1Btn1.Label"/>
+                  <Supertip>
+                    <Title resid="TPGroup1Btn1.Label"/>
+                    <Description resid="TaskpaneButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <!--TaskpaneId>ButtonId1</TaskpaneId-->
+                    <SourceLocation resid="Taskpane1.Url"/>
+                  </Action>
+                </Control>
+              </Group>
+              <Group id="TPGroup2">
+                <Label resid="TPGroup1.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Control xsi:type="Button" id="TPGroup2Btn1">
+                  <Label resid="TPGroup2Btn1.Label"/>
+                  <Supertip>
+                    <Title resid="TPGroup2Btn1.Label"/>
+                    <Description resid="TaskpaneButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <!--TaskpaneId>ButtonId1</TaskpaneId-->
+                    <SourceLocation resid="Taskpane2.Url"/>
+                  </Action>
+                </Control>
+              </Group>
+              <Group id="CGroup">
+                <Label resid="CGroup.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Control xsi:type="Button" id="CGroupBtn1">
+                  <Label resid="CGroupBtn1.Label"/>
+                  <Supertip>
+                    <Title resid="CGroupBtn1.Label"/>
+                    <Description resid="TaskpaneButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>indexValidation</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+            </CustomTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16x16" DefaultValue="https://app.smartedit-evc.us/assets/icon-16.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://app.smartedit-evc.us/assets/icon-32.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://app.smartedit-evc.us/assets/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://app.smartedit-evc.us/commands.html"/>
+        <bt:Url id="Taskpane1.Url" DefaultValue="https://app.smartedit-evc.us/taskpane1.html"/>
+        <bt:Url id="Taskpane2.Url" DefaultValue="https://app.smartedit-evc.us/taskpane2.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="GetStarted.Title" DefaultValue="eVC Smart Editing and Validation Tools!"/>
+        <bt:String id="myTab.Label" DefaultValue="eVC Tools"/>
+        <bt:String id="TPGroup1.Label" DefaultValue="Pre-editing Tools"/>
+        <bt:String id="TPGroup2.Label" DefaultValue="Copy-Editing Tools"/>
+        <bt:String id="CGroup.Label" DefaultValue="Utility Commands"/>
+        <bt:String id="TPGroup1Btn1.Label" DefaultValue="Pre-editing"/>
+        <bt:String id="TPGroup2Btn1.Label" DefaultValue="Copy-Editing"/>
+        <bt:String id="CGroupBtn1.Label" DefaultValue="Index Validation"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="GetStarted.Description" DefaultValue="eVC Smart Editing and Validation tools loaded succesfully. Go to the eVC Tools tab and get started."/>
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Show a Editing and Validation Tools"/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>

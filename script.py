@@ -1,3 +1,5 @@
+#!/usr/local/bin/python
+
 import numpy as np
 import re
 import sys
